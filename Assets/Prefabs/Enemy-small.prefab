@@ -66,6 +66,7 @@ MonoBehaviour:
   maxHP: 3
   fireRate: 2
   fireVariance: 0.25
+  maxPlayerDistance: 100
   projectile: {fileID: 529684353158770540, guid: ab7ca2385e7692b4a9d170aadc83f27a,
     type: 3}
 --- !u!1 &8224862454638160106

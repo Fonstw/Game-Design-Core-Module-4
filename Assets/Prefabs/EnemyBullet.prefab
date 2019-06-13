@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
-  timeOut: 7
+  maxPlayerDistance: 100
   damage: 1
   safe: Enemy
   target: Player

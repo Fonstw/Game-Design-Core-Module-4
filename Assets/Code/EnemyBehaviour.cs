@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    [SerializeField] float speed, maxHP, fireRate, fireVariance;
+    [SerializeField] float speed = 5, maxHP = 3, fireRate = 2, fireVariance = .25f, maxPlayerDistance = 35;
     [SerializeField] GameObject projectile;
 
     float curHP, fireTimer;
@@ -68,6 +68,9 @@ public class EnemyBehaviour : MonoBehaviour
     {
         // move forward according to your speed and the flow of time (=speed doesn't change when framerate does)
         rb.velocity = transform.forward * speed;
+
+        if (Vector3.Distance(transform.position, player.transform.position) > maxPlayerDistance)
+            Destroy(gameObject);
     }
 
     public void TakeDamage(float dmg)

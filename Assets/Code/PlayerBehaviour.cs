@@ -130,6 +130,6 @@ public class PlayerBehaviour : MonoBehaviour
             regenTimer = regenDelay;
 
         if (curHP <= 0)
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("Lose");
     }
 }
