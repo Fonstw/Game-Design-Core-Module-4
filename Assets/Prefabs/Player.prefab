@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10.93333
-  shootDelay: 0.125
+  shootDelay: 0.10416665
   maxHP: 7
   regenDelay: 2.6
   regenSpeed: 1.61
