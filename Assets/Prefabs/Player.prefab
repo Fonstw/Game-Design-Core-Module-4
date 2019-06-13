@@ -157,10 +157,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10.93333
-  shootDelay: 0.10416665
-  maxHP: 7
+  shootDelay: 0.2
+  maxHP: 3.1666667
   regenDelay: 2.6
-  regenSpeed: 1.61
+  regenSpeed: 1.14
   hpFront: {fileID: 0}
   projectile: {fileID: 529684353158770540, guid: 01b6f8bcdb424a84faf60b6d669f28f4,
     type: 3}
