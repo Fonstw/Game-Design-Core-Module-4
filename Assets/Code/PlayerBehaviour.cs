@@ -117,7 +117,8 @@ public class PlayerBehaviour : MonoBehaviour
         if (shootTimer >= shootDelay)
         {
             shootTimer = 0;
-            Instantiate(projectile, transform.position, transform.rotation);
+            Instantiate(projectile, transform.position - transform.right * .42f + transform.forward * .1f, transform.rotation);
+            Instantiate(projectile, transform.position + transform.right * .42f + transform.forward * .1f, transform.rotation);
         }
     }
 

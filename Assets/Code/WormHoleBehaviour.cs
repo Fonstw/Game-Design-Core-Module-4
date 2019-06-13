@@ -8,6 +8,9 @@ public class WormHoleBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (active && other.tag == "Player")
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        {
+            PlayerPrefs.SetInt("CurrentLevel", SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(PlayerPrefs.GetInt("CurrentLevel"));
+        }
     }
 }
