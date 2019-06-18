@@ -158,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10.93333
   shootDelay: 0.2
-  maxHP: 3.1666667
+  maxHP: 6.333334
   regenDelay: 2.6
   regenSpeed: 1.14
   hpFront: {fileID: 0}
@@ -181,10 +181,10 @@ MonoBehaviour:
   rateFluctuation: 0.2
   spawnDistance: 20
   betweenX:
-  - -10
-  - 10
+  - -100
+  - 100
   enemies:
-  - {fileID: 5155837878191506698, guid: 5c07af31badbb3649a0be67da7ba9064, type: 3}
+  - {fileID: 2779275667032607263, guid: 00e3ab2c6ce57474295e65e0d86d44da, type: 3}
 --- !u!135 &7822050999683061303
 SphereCollider:
   m_ObjectHideFlags: 0

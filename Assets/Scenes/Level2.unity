@@ -2052,6 +2052,16 @@ PrefabInstance:
       propertyPath: hpFront
       value: 
       objectReference: {fileID: 949234527}
+    - target: {fileID: 866516838885215958, guid: 908b7f19bc55b0d4489e1eea24b537aa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774961110666863260, guid: 908b7f19bc55b0d4489e1eea24b537aa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5420416352690685787, guid: 908b7f19bc55b0d4489e1eea24b537aa,
         type: 3}
       propertyPath: betweenX.Array.data[0]
@@ -2071,16 +2081,6 @@ PrefabInstance:
         type: 3}
       propertyPath: rateFluctuation
       value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 866516838885215958, guid: 908b7f19bc55b0d4489e1eea24b537aa,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6774961110666863260, guid: 908b7f19bc55b0d4489e1eea24b537aa,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 908b7f19bc55b0d4489e1eea24b537aa, type: 3}

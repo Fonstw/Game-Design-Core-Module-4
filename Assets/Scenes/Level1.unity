@@ -416,7 +416,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!64 &1698508254
 MeshCollider:
@@ -1486,12 +1486,12 @@ PrefabInstance:
     - target: {fileID: 1027835816690412620, guid: 908b7f19bc55b0d4489e1eea24b537aa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.15
+      value: 1.13
       objectReference: {fileID: 0}
     - target: {fileID: 1027835816690412620, guid: 908b7f19bc55b0d4489e1eea24b537aa,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 177.5
+      value: 177.49
       objectReference: {fileID: 0}
     - target: {fileID: 1027835816690412620, guid: 908b7f19bc55b0d4489e1eea24b537aa,
         type: 3}
@@ -1547,6 +1547,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420416352690685787, guid: 908b7f19bc55b0d4489e1eea24b537aa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420416352690685787, guid: 908b7f19bc55b0d4489e1eea24b537aa,
+        type: 3}
+      propertyPath: betweenX.Array.data[0]
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420416352690685787, guid: 908b7f19bc55b0d4489e1eea24b537aa,
+        type: 3}
+      propertyPath: betweenX.Array.data[1]
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 908b7f19bc55b0d4489e1eea24b537aa, type: 3}
@@ -1730,7 +1745,7 @@ PrefabInstance:
     - target: {fileID: 5968474355672355567, guid: 0a1b9d13c9a59344884a6a58d1014fc0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5968474355672355567, guid: 0a1b9d13c9a59344884a6a58d1014fc0,
         type: 3}

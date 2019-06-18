@@ -97,8 +97,6 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Kill()
     {
-        shootTimer += Time.deltaTime;
-        
         Vector3 direction = new Vector3();
 
         if (Input.GetAxis("RightHorizontal") != 0)
@@ -120,6 +118,8 @@ public class PlayerBehaviour : MonoBehaviour
             Instantiate(projectile, transform.position - transform.right * .42f + transform.forward * .1f, transform.rotation);
             Instantiate(projectile, transform.position + transform.right * .42f + transform.forward * .1f, transform.rotation);
         }
+        else
+            shootTimer += Time.deltaTime;
     }
 
     public void TakeDamage(float dmg)

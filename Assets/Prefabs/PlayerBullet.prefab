@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc029f0bb1c56a640acea4a0068c72ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
-  maxPlayerDistance: 100
+  speed: 18.27
+  maxPlayerDistance: 40
   damage: 1
   safe: Player
   target: Enemy
