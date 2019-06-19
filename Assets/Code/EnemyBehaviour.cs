@@ -7,7 +7,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] int maxSpawnTimes = 3;
     [SerializeField] float speed = 5, maxHP = 3, shootDelay = 2, shootVariance = .25f, despawnRange = 25f;
     [SerializeField] Vector3 projectileOffset;
-    [SerializeField] GameObject projectile;
+    [SerializeField] GameObject projectile, explosion;
 
     float shootTimer, curHP;
     Rigidbody rb;
@@ -75,6 +75,14 @@ public class EnemyBehaviour : MonoBehaviour
         curHP -= dmg;
 
         if (curHP <= 0)
-            Destroy(gameObject);
+        {
+            foreach (MeshRenderer rend in GetComponentsInChildren<MeshRenderer>())
+                rend.enabled = false;
+            
+            explosion.SetActive(true);
+            Destroy(gameObject, 2);
+
+            GetComponent<EnemyBehaviour>().enabled = false;
+        }
     }
 }

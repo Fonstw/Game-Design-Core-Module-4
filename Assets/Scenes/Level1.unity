@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 993067607}
   - component: {fileID: 993067606}
   - component: {fileID: 993067609}
+  - component: {fileID: 993067610}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -263,7 +264,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
+  m_HDR: 0
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
@@ -297,6 +298,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 5006512735793672126}
+--- !u!114 &993067610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993067605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c0ae4ccf993f54089e2a9eabb2e864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RenderTextureResolutoinFactor: 0.5
+  Intensity: 0.5
 --- !u!64 &1002547438
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1419,7 +1434,7 @@ Transform:
   - {fileID: 892378927391198305}
   - {fileID: 1313000129766576970}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &5356653993562165624
 MeshRenderer:
@@ -1538,31 +1553,6 @@ PrefabInstance:
       propertyPath: hpFront
       value: 
       objectReference: {fileID: 949234527}
-    - target: {fileID: 866516838885215958, guid: 908b7f19bc55b0d4489e1eea24b537aa,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6774961110666863260, guid: 908b7f19bc55b0d4489e1eea24b537aa,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420416352690685787, guid: 908b7f19bc55b0d4489e1eea24b537aa,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420416352690685787, guid: 908b7f19bc55b0d4489e1eea24b537aa,
-        type: 3}
-      propertyPath: betweenX.Array.data[0]
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420416352690685787, guid: 908b7f19bc55b0d4489e1eea24b537aa,
-        type: 3}
-      propertyPath: betweenX.Array.data[1]
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 908b7f19bc55b0d4489e1eea24b537aa, type: 3}
 --- !u!1 &5432582420633803566
@@ -1745,7 +1735,7 @@ PrefabInstance:
     - target: {fileID: 5968474355672355567, guid: 0a1b9d13c9a59344884a6a58d1014fc0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5968474355672355567, guid: 0a1b9d13c9a59344884a6a58d1014fc0,
         type: 3}

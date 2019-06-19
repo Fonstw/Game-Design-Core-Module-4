@@ -3,12 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    [SerializeField] float speed = 5, shootDelay = 1f / 12f, maxHP = 100, regenDelay = 2f, regenSpeed = 2f;
+    [SerializeField] float speed = 5, shootDelay = 1f / 12f, maxHP = 100, inincibilityWindow = 2f;
     [SerializeField] RectTransform hpFront;
-    [SerializeField] GameObject projectile;
+    [SerializeField] GameObject projectile, explosion;
     [SerializeField] Collider trigger;
 
-    float shootTimer = 0, grabTimer = 0, curHP, hpFrontWidth, regenTimer;
+    float shootTimer = 0, grabTimer = 0, curHP, hpFrontWidth, invincibilityTimer, explosionTimer;
     Rigidbody rb;
     GameObject hold = null;
 
@@ -24,12 +24,27 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Heal();
-        Move();
-        Drop();
+        if (explosionTimer <= 0)
+        {
+            if (curHP > 0)
+                explosion.SetActive(false);
+            else
+                SceneManager.LoadScene("Lose");
+        }
+        else
+            explosionTimer -= Time.deltaTime;
 
-        if (hold == null)
-            Kill();
+        if (invincibilityTimer > 0)
+            invincibilityTimer -= Time.deltaTime;
+
+        if (curHP > 0)
+        {
+            Move();
+            Drop();
+
+            if (hold == null)
+                Kill();
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -55,14 +70,6 @@ public class PlayerBehaviour : MonoBehaviour
             hold.transform.SetParent(null);
             hold = null;
         }
-    }
-
-    void Heal()
-    {
-        if (regenTimer <= 0 && curHP < maxHP)
-            TakeDamage(-regenSpeed * Time.deltaTime);
-        else
-            regenTimer -= Time.deltaTime;
     }
 
     void Move()
@@ -124,13 +131,23 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
-        curHP = Mathf.Clamp(curHP - dmg, 0, maxHP);
-        hpFront.sizeDelta = new Vector2(hpFrontWidth * curHP / maxHP, hpFront.sizeDelta.y);
+        if (invincibilityTimer <= 0)
+        {
+            explosion.SetActive(false);
+            explosion.SetActive(true);
+            explosionTimer = inincibilityWindow;
 
-        if (dmg > 0)
-            regenTimer = regenDelay;
+            curHP = Mathf.Clamp(curHP - dmg, 0, maxHP);
+            hpFront.sizeDelta = new Vector2(hpFrontWidth * curHP / maxHP, hpFront.sizeDelta.y);
 
-        if (curHP <= 0)
-            SceneManager.LoadScene("Lose");
+            if (dmg > 0)
+                invincibilityTimer = inincibilityWindow;
+
+            //if (curHP <= 0)
+            //{
+            //GetComponent<PlayerBehaviour>().enabled = false;
+            //GetComponent<EnemySpawn>().enabled = false;
+            //}
+        }
     }
 }

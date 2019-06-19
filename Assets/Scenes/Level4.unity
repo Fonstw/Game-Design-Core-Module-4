@@ -189,7 +189,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
+  m_HDR: 0
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
@@ -3428,6 +3428,16 @@ PrefabInstance:
       propertyPath: hpFront
       value: 
       objectReference: {fileID: 949234527}
+    - target: {fileID: 866516838885215958, guid: 908b7f19bc55b0d4489e1eea24b537aa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774961110666863260, guid: 908b7f19bc55b0d4489e1eea24b537aa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5420416352690685787, guid: 908b7f19bc55b0d4489e1eea24b537aa,
         type: 3}
       propertyPath: betweenX.Array.data[0]
@@ -3452,16 +3462,6 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnDistance
       value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 866516838885215958, guid: 908b7f19bc55b0d4489e1eea24b537aa,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6774961110666863260, guid: 908b7f19bc55b0d4489e1eea24b537aa,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 908b7f19bc55b0d4489e1eea24b537aa, type: 3}
