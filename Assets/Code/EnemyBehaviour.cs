@@ -8,6 +8,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] float speed = 5, maxHP = 3, shootDelay = 2, shootVariance = .25f, despawnRange = 25f;
     [SerializeField] Vector3 projectileOffset;
     [SerializeField] GameObject projectile, explosion;
+    [SerializeField] GameObject[] pickups;
 
     float shootTimer, curHP;
     Rigidbody rb;
@@ -72,17 +73,26 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
-        curHP -= dmg;
-
-        if (curHP <= 0)
+        if (curHP > 0)
         {
-            foreach (MeshRenderer rend in GetComponentsInChildren<MeshRenderer>())
-                rend.enabled = false;
-            
-            explosion.SetActive(true);
-            Destroy(gameObject, 2);
+            curHP -= dmg;
 
-            GetComponent<EnemyBehaviour>().enabled = false;
+            if (curHP <= 0)
+            {
+                foreach (MeshRenderer rend in GetComponentsInChildren<MeshRenderer>())
+                    rend.enabled = false;
+
+                explosion.SetActive(true);
+                Destroy(gameObject, 2);
+
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().ChangeScore(0);
+                if (player.GetComponent<PlayerBehaviour>().InDanger() && Random.Range(0, 6) == 0)
+                    Instantiate(pickups[0], transform.position + new Vector3(0, 1, 0), Quaternion.Euler(-60, 90, 0));
+                else if (pickups.Length > 1 && Random.Range(0, 16) == 0)
+                    Instantiate(pickups[Random.Range(1, pickups.Length)], transform.position + new Vector3(0, 1, 0), Quaternion.Euler(-60, 90, 0));
+
+                GetComponent<EnemyBehaviour>().enabled = false;
+            }
         }
     }
 }

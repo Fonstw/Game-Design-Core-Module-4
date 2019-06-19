@@ -120,12 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!224 &949234527 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5968474354973833321, guid: 0a1b9d13c9a59344884a6a58d1014fc0,
-    type: 3}
-  m_PrefabInstance: {fileID: 5968474354309813046}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &993067605
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,7 +2091,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hpFront
       value: 
-      objectReference: {fileID: 949234527}
+      objectReference: {fileID: 5968474354309813047}
     - target: {fileID: 866516838885215958, guid: 908b7f19bc55b0d4489e1eea24b537aa,
         type: 3}
       propertyPath: m_TagString
@@ -2469,6 +2463,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a1b9d13c9a59344884a6a58d1014fc0, type: 3}
+--- !u!224 &5968474354309813047 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5968474356067527496, guid: 0a1b9d13c9a59344884a6a58d1014fc0,
+    type: 3}
+  m_PrefabInstance: {fileID: 5968474354309813046}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6098830967457207656
 GameObject:
   m_ObjectHideFlags: 0

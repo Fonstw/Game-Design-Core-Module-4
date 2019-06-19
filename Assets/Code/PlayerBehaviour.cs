@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] RectTransform hpFront;
     [SerializeField] GameObject projectile, explosion;
     [SerializeField] Collider trigger;
+    [SerializeField] Color neutralColour, invincibleColour, dangerColour;
 
     float shootTimer = 0, grabTimer = 0, curHP, hpFrontWidth, invincibilityTimer, explosionTimer;
     Rigidbody rb;
@@ -35,7 +37,14 @@ public class PlayerBehaviour : MonoBehaviour
             explosionTimer -= Time.deltaTime;
 
         if (invincibilityTimer > 0)
+        {
+            hpFront.GetComponent<Image>().color = invincibleColour;
             invincibilityTimer -= Time.deltaTime;
+        }
+        else if (InDanger())
+            hpFront.GetComponent<Image>().color = dangerColour;
+        else
+            hpFront.GetComponent<Image>().color = neutralColour;
 
         if (curHP > 0)
         {
@@ -131,23 +140,29 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
-        if (invincibilityTimer <= 0)
+        if (dmg > 0 && invincibilityTimer <= 0)
         {
             explosion.SetActive(false);
             explosion.SetActive(true);
             explosionTimer = inincibilityWindow;
+        }
+        if ((dmg > 0 && invincibilityTimer <= 0) || dmg < 0)
+        {
+            invincibilityTimer = inincibilityWindow;
 
             curHP = Mathf.Clamp(curHP - dmg, 0, maxHP);
             hpFront.sizeDelta = new Vector2(hpFrontWidth * curHP / maxHP, hpFront.sizeDelta.y);
-
-            if (dmg > 0)
-                invincibilityTimer = inincibilityWindow;
-
-            //if (curHP <= 0)
-            //{
-            //GetComponent<PlayerBehaviour>().enabled = false;
-            //GetComponent<EnemySpawn>().enabled = false;
-            //}
         }
+
+        if (curHP <= 0)
+        {
+            CommandToDrop();
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        }
+    }
+
+    public bool InDanger()
+    {
+        return curHP < maxHP/2;
     }
 }

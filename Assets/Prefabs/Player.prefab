@@ -9896,7 +9896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1b3e01b4048df47a2a757cb6baa19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10.93333
+  speed: 10
   shootDelay: 0.2
   maxHP: 7
   inincibilityWindow: 2.63
@@ -9905,6 +9905,9 @@ MonoBehaviour:
     type: 3}
   explosion: {fileID: 1793854248391915}
   trigger: {fileID: 0}
+  neutralColour: {r: 1, g: 1, b: 1, a: 1}
+  invincibleColour: {r: 0, g: 0.5019608, b: 1, a: 1}
+  dangerColour: {r: 1, g: 0.7490196, b: 0, a: 1}
 --- !u!114 &5420416352690685787
 MonoBehaviour:
   m_ObjectHideFlags: 0

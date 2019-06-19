@@ -5,17 +5,17 @@ public class ProjectileBehaviour : MonoBehaviour
     [SerializeField] float speed = 5, maxPlayerDistance = 35, damage = 1;
     [SerializeField] string safe = "Player", target = "Enemy";
 
+    Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        GetComponent<Rigidbody>().velocity = transform.forward * speed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-
         if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) > maxPlayerDistance)
             Destroy(gameObject);
     }
@@ -30,7 +30,8 @@ public class ProjectileBehaviour : MonoBehaviour
                 other.GetComponent<PlayerBehaviour>().TakeDamage(damage);
         }
 
-        if (other.tag != safe && other.bounds.max.y > transform.position.y && !other.name.Contains("Structure"))
+        if (other.tag != safe && other.bounds.max.y > transform.position.y
+            && !other.name.Contains("Structure") && !other.name.Contains("Bullet"))
             Destroy(gameObject);
     }
 }
